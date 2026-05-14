@@ -29,22 +29,19 @@ const profilePageSchema: WithContext<ProfilePage> = {
     description: siteMetadata.description,
     url: siteUrl,
     email: links.email,
-    image: new URL('/avatar.png', siteUrl).toString(),
+    image: new URL('/avatar.jpg', siteUrl).toString(),
 
     homeLocation: {
       '@type': 'Place',
-      name: 'Wroclaw, Poland',
+      name: 'India',
       address: {
         '@type': 'PostalAddress',
-        addressLocality: 'Wroclaw',
-        addressCountry: 'PL',
+        addressCountry: 'IN',
       },
     },
 
     sameAs: [
       links.social.x,
-      links.social.threads,
-      links.social.bluesky,
       links.social.linkedin,
       links.social.github,
     ],

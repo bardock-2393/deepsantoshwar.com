@@ -33,7 +33,7 @@ export function Footer({ className, ...props }: React.ComponentProps<'footer'>) 
             icon={FavouriteIcon}
             aria-hidden={true}
           />
-          <span>by Andrei</span>
+          <span>by Deep</span>
         </p>
 
         <p className="inline-flex items-center gap-2">

@@ -4,23 +4,23 @@
   </div>
 
   <h3>
-    <a href="https://hudovich.com">hudovich.com</a>
+    <a href="https://deepsantoshwar.com">deepsantoshwar.com</a>
   </h3>
 
   <p>
-    Personal website of Andrei Hudovich
+    Personal website of Deep Santoshwar
   </p>
 
   <p>
-    <a href="https://github.com/ahudovich">GitHub</a>
+    <a href="https://github.com/deepsantoshwar">GitHub</a>
     &middot;
-    <a href="https://x.com/ahudovich">X/Twitter</a>
+    <a href="https://x.com/deepsantoshwar">X/Twitter</a>
     &middot;
-    <a href="https://www.threads.com/@ahudovich">Threads</a>
+    <a href="https://www.threads.com/@deepsantoshwar">Threads</a>
     &middot;
-    <a href="https://bsky.app/profile/hudovich.com">Bluesky</a>
+    <a href="https://bsky.app/profile/deepsantoshwar.com">Bluesky</a>
     &middot;
-    <a href="https://www.linkedin.com/in/ahudovich/">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/deepsantoshwar/">LinkedIn</a>
   </p>
 </div>
 
@@ -36,4 +36,4 @@
 
 ## License
 
-This project is [MIT licensed](https://github.com/ahudovich/hudovich.com/blob/main/LICENSE).
+This project is [MIT licensed](https://github.com/deepsantoshwar/deepsantoshwar.com/blob/main/LICENSE).

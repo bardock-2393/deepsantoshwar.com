@@ -1,10 +1,8 @@
 import Link from 'next/link'
 import {
-  BlueskyIcon,
   GithubIcon,
   Linkedin01Icon,
   NewTwitterIcon,
-  ThreadsIcon,
 } from '@hugeicons/core-free-icons'
 import {
   SectionHeader,
@@ -32,20 +30,6 @@ const socialLinks: Array<SocialLink> = [
     icon: NewTwitterIcon,
     href: links.social.x,
     fill: 'text-foreground',
-  },
-  {
-    slot: 'threads',
-    label: 'Threads',
-    icon: ThreadsIcon,
-    href: links.social.threads,
-    fill: 'text-foreground',
-  },
-  {
-    slot: 'bluesky',
-    label: 'Bluesky',
-    icon: BlueskyIcon,
-    href: links.social.bluesky,
-    fill: 'text-[#0085dd]',
   },
   {
     slot: 'linkedin',

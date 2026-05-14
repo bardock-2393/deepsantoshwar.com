@@ -88,7 +88,7 @@ export default async function PostPage({ params }: PageProps<'/posts/[slug]'>) {
     datePublished: post.publishedAt,
     author: {
       '@type': 'Person',
-      name: 'Andrei Hudovich',
+      name: 'Deep Santoshwar',
     },
   }
 

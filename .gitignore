@@ -17,3 +17,7 @@ next-env.d.ts
 
 # Content Collections
 .content-collections
+
+# Environment
+.env.local
+.env*.local
