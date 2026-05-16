@@ -1,6 +1,5 @@
 import Script from 'next/script'
 import { Container } from '@/components/layout/Container'
-import { HomeClients } from '@/components/pages/home/HomeClients'
 import { HomeContact } from '@/components/pages/home/HomeContact'
 import { HomeExperience } from '@/components/pages/home/HomeExperience'
 import { HomeHero } from '@/components/pages/home/HomeHero'
@@ -63,7 +62,6 @@ export default function HomePage() {
       <Container className="space-y-12">
         <HomeHero />
         <HomePosts />
-        <HomeClients />
         <HomeExperience />
         <HomeProjects />
         <HomeSocials />

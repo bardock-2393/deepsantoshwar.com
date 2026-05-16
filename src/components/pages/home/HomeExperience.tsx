@@ -11,6 +11,14 @@ import { Icon } from '@/components/ui/Icon'
 
 const experiences = [
   {
+    title: 'Freelancer',
+    company: 'Bildory, Interview Buddy, Qualia',
+    logo: RocketIcon,
+    date: 'October 2025 - Present',
+    description: 'Architecting and developing solutions for global clients. Engineering an AI-generation PPT platform (Bildory), an interview assistance application (Interview Buddy), and WhatsApp & call automation tools for enterprise clients (Qualia).',
+    tags: ['SaaS', 'AI', 'Automation', 'Full Stack', 'Desktop'],
+  },
+  {
     title: 'Software Developer',
     company: 'Exhibit BBC Top Gear',
     logo: '/logos/topgear.png',
@@ -60,14 +68,18 @@ export function HomeExperience() {
             <summary className="flex cursor-pointer items-center justify-between py-4 font-medium transition-colors hover:text-primary outline-none marker:content-[''] [&::-webkit-details-marker]:hidden">
               <div className="flex items-center gap-3">
                 <div className="shrink-0 overflow-hidden rounded-sm bg-white border border-border size-8 flex items-center justify-center p-1">
-                  <img 
-                    src={exp.logo} 
-                    alt={exp.company} 
-                    className="w-full h-full object-contain"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(exp.company)}&background=random&color=fff&bold=true`
-                    }}
-                  />
+                  {typeof exp.logo === 'string' ? (
+                    <img 
+                      src={exp.logo} 
+                      alt={exp.company} 
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(exp.company)}&background=random&color=fff&bold=true`
+                      }}
+                    />
+                  ) : (
+                    <Icon icon={exp.logo} className="size-full text-primary" />
+                  )}
                 </div>
                 <div className="flex flex-col text-left">
                   <span>{exp.title}</span>

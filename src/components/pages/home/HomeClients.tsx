@@ -1,4 +1,4 @@
-import { ArrowDown01Icon, Briefcase02Icon } from '@hugeicons/core-free-icons'
+import { ArrowDown01Icon, Presentation01Icon, UserAiIcon, WhatsappIcon } from '@hugeicons/core-free-icons'
 import {
   SectionHeader,
   SectionHeaderText,
@@ -12,16 +12,19 @@ const clients = [
     name: 'Bildory',
     description: 'AI generation PPT platform (better than Gamma).',
     tags: ['SaaS', 'Dubai'],
+    icon: Presentation01Icon,
   },
   {
     name: 'Interview Buddy',
     description: 'Interview assistance for job seekers.',
     tags: ['Desktop', 'Mac', 'Windows', 'UK'],
+    icon: UserAiIcon,
   },
   {
     name: 'Qualia',
     description: "WhatsApp & call automation for enterprise clients (Wipro, Honda, Tata).",
     tags: ['SaaS', 'Infra', 'Automation', 'India'],
+    icon: WhatsappIcon,
   },
 ] as const
 
@@ -41,7 +44,7 @@ export function HomeClients() {
             <summary className="flex cursor-pointer items-center justify-between py-4 font-medium transition-colors hover:text-primary outline-none marker:content-[''] [&::-webkit-details-marker]:hidden">
               <div className="flex items-center gap-3">
                 <div className="shrink-0 rounded-sm bg-muted/50 p-1.5 text-primary">
-                  <Icon icon={Briefcase02Icon} className="size-4" />
+                  <Icon icon={client.icon} className="size-4" />
                 </div>
                 <span>{client.name}</span>
               </div>
