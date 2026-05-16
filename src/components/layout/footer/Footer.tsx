@@ -13,7 +13,7 @@ export function Footer({ className, ...props }: React.ComponentProps<'footer'>) 
       <Container
         className={cn(
           'flex flex-col items-center justify-center gap-4 border-t py-6 text-xs text-muted-foreground',
-          'sm:flex-row sm:justify-between'
+          'sm:flex-row'
         )}
         variant="fluid"
       >
@@ -36,23 +36,7 @@ export function Footer({ className, ...props }: React.ComponentProps<'footer'>) 
           <span>by Deep</span>
         </p>
 
-        <p className="inline-flex items-center gap-2">
-          This website is
-          <TextLink
-            href={links.source}
-            icon={
-              <Icon
-                className="size-3.5 shrink-0 text-foreground"
-                icon={GitForkIcon}
-                aria-hidden={true}
-              />
-            }
-            target="_blank"
-            rel="noreferrer"
-          >
-            open source
-          </TextLink>
-        </p>
+
       </Container>
     </footer>
   )

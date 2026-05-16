@@ -1,5 +1,8 @@
+import Script from 'next/script'
 import { Container } from '@/components/layout/Container'
+import { HomeClients } from '@/components/pages/home/HomeClients'
 import { HomeContact } from '@/components/pages/home/HomeContact'
+import { HomeExperience } from '@/components/pages/home/HomeExperience'
 import { HomeHero } from '@/components/pages/home/HomeHero'
 import { HomePosts } from '@/components/pages/home/HomePosts'
 import { HomeProjects } from '@/components/pages/home/HomeProjects'
@@ -51,7 +54,8 @@ const profilePageSchema: WithContext<ProfilePage> = {
 export default function HomePage() {
   return (
     <>
-      <script
+      <Script
+        id="profile-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }}
       />
@@ -59,6 +63,8 @@ export default function HomePage() {
       <Container className="space-y-12">
         <HomeHero />
         <HomePosts />
+        <HomeClients />
+        <HomeExperience />
         <HomeProjects />
         <HomeSocials />
         <HomeContact />

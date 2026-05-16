@@ -5,6 +5,7 @@ import { ThemeProvider } from 'next-themes'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Footer } from '@/components/layout/footer/Footer'
 import { Header } from '@/components/layout/header/Header'
+import { FloatingHelp } from '@/components/layout/FloatingHelp'
 import { TooltipProvider } from '@/components/ui/Tooltip'
 import { siteMetadata } from '@/data/metadata.json'
 import { env } from '@/lib/env'
@@ -54,6 +55,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           {/* Vercel Speed Insights */}
           <SpeedInsights />
+          
+          <FloatingHelp />
         </ThemeProvider>
       </body>
     </html>
