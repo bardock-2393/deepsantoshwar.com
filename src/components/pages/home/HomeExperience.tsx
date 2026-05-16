@@ -15,8 +15,8 @@ const experiences = [
     company: 'Bildory, Qualia, & Full-Stack AI Client',
     logo: RocketIcon,
     date: 'October 2025 - Present',
-    description: 'Architecting and developing solutions for global clients. Engineering an AI-generation PPT platform (Bildory), delivering a comprehensive full-stack AI product from scratch, and developing WhatsApp & call automation tools for enterprise clients (Qualia).',
-    tags: ['SaaS', 'AI', 'Automation', 'Full Stack', 'Desktop'],
+    description: 'Architecting and developing solutions for global clients across Dubai, the UK, and India. Engineering an AI-generation PPT platform (Bildory), delivering a comprehensive full-stack AI product from scratch, and developing WhatsApp & call automation tools for enterprise clients (Qualia).',
+    tags: ['SaaS', 'AI', 'Full Stack', 'Dubai', 'UK', 'India'],
   },
   {
     title: 'Software Developer',
