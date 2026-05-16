@@ -14,8 +14,8 @@ const clients = [
     tags: ['SaaS', 'Dubai'],
   },
   {
-    name: 'AiApply',
-    description: 'Interview buddy and interview assistance for job seekers.',
+    name: 'Interview Buddy',
+    description: 'Interview assistance for job seekers.',
     tags: ['Desktop', 'Mac', 'Windows', 'UK'],
   },
   {
