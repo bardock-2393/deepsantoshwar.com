@@ -12,10 +12,10 @@ import { Icon } from '@/components/ui/Icon'
 const experiences = [
   {
     title: 'Freelancer',
-    company: 'Bildory, Interview Buddy, Qualia',
+    company: 'Bildory, Qualia, & Full-Stack AI Client',
     logo: RocketIcon,
     date: 'October 2025 - Present',
-    description: 'Architecting and developing solutions for global clients. Engineering an AI-generation PPT platform (Bildory), an interview assistance application (Interview Buddy), and WhatsApp & call automation tools for enterprise clients (Qualia).',
+    description: 'Architecting and developing solutions for global clients. Engineering an AI-generation PPT platform (Bildory), delivering a comprehensive full-stack AI product from scratch, and developing WhatsApp & call automation tools for enterprise clients (Qualia).',
     tags: ['SaaS', 'AI', 'Automation', 'Full Stack', 'Desktop'],
   },
   {
