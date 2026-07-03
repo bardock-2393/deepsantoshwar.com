@@ -35,8 +35,6 @@ export function Footer({ className, ...props }: React.ComponentProps<'footer'>) 
           />
           <span>by Deep</span>
         </p>
-
-
       </Container>
     </footer>
   )

@@ -1,4 +1,9 @@
-import { ArrowDown01Icon, Presentation01Icon, UserAiIcon, WhatsappIcon } from '@hugeicons/core-free-icons'
+import {
+  ArrowDown01Icon,
+  Presentation01Icon,
+  UserAiIcon,
+  WhatsappIcon,
+} from '@hugeicons/core-free-icons'
 import {
   SectionHeader,
   SectionHeaderText,
@@ -22,7 +27,7 @@ const clients = [
   },
   {
     name: 'Qualia',
-    description: "WhatsApp & call automation for enterprise clients (Wipro, Honda, Tata).",
+    description: 'WhatsApp & call automation for enterprise clients (Wipro, Honda, Tata).',
     tags: ['SaaS', 'Infra', 'Automation', 'India'],
     icon: WhatsappIcon,
   },
@@ -41,22 +46,22 @@ export function HomeClients() {
       <div className="flex flex-col border-t border-border">
         {clients.map((client) => (
           <details key={client.name} className="group border-b border-border">
-            <summary className="flex cursor-pointer items-center justify-between py-4 font-medium transition-colors hover:text-primary outline-none marker:content-[''] [&::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between py-4 font-medium transition-colors outline-none marker:content-[''] hover:text-primary [&::-webkit-details-marker]:hidden">
               <div className="flex items-center gap-3">
                 <div className="shrink-0 rounded-sm bg-muted/50 p-1.5 text-primary">
                   <Icon icon={client.icon} className="size-4" />
                 </div>
                 <span>{client.name}</span>
               </div>
-              <Icon 
-                icon={ArrowDown01Icon} 
-                className="size-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" 
+              <Icon
+                icon={ArrowDown01Icon}
+                className="size-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
               />
             </summary>
 
             <div className="pb-4 pl-11 text-sm text-muted-foreground">
               <p className="leading-relaxed">{client.description}</p>
-              <div className="flex flex-wrap gap-1.5 mt-3">
+              <div className="mt-3 flex flex-wrap gap-1.5">
                 {client.tags.map((tag) => (
                   <Badge key={tag} variant="secondary" className="font-medium">
                     {tag}

@@ -1,9 +1,5 @@
 import Link from 'next/link'
-import {
-  GithubIcon,
-  Linkedin01Icon,
-  NewTwitterIcon,
-} from '@hugeicons/core-free-icons'
+import { GithubIcon, Linkedin01Icon, NewTwitterIcon } from '@hugeicons/core-free-icons'
 import {
   SectionHeader,
   SectionHeaderText,

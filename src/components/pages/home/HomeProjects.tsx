@@ -5,8 +5,8 @@ import {
   SectionHeaderText,
   SectionHeaderTitle,
 } from '@/components/layout/SectionHeader'
+import { LogoAirblander } from '@/components/logos/LogoAirblander'
 import { LogoBlueskyMeter } from '@/components/logos/LogoBlueskyMeter'
-import { LogoListingCat } from '@/components/logos/LogoListingCat'
 import { Badge } from '@/components/ui/Badge'
 import { Card, CardContent, CardHeader, CardIndicator, CardTitle } from '@/components/ui/Card'
 import { Icon } from '@/components/ui/Icon'
@@ -15,11 +15,11 @@ import type { BadgeVariant } from '@/components/ui/Badge'
 
 const projects = [
   {
-    name: 'Listing Cat',
-    description: 'Marketing database for startups and indie hackers.',
+    name: 'Airblander',
+    description: 'Claude Code plugin that prevents AI agents from writing outdated SDK code.',
     status: 'active',
-    icon: <LogoListingCat />,
-    link: links.projects.listingcat,
+    icon: <LogoAirblander />,
+    link: links.projects.airblander,
   },
   {
     name: 'Bluesky Meter',

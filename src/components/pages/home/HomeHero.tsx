@@ -1,6 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { AndroidIcon, AppleIcon, Calendar03Icon, CloudIcon, Mail01Icon, PuzzleIcon, ServerStack01Icon } from '@hugeicons/core-free-icons'
+import {
+  AndroidIcon,
+  AppleIcon,
+  Calendar03Icon,
+  CloudIcon,
+  Mail01Icon,
+  PuzzleIcon,
+  ServerStack01Icon,
+} from '@hugeicons/core-free-icons'
 import { IconFlagIndia } from '@/components/icons/IconFlagIndia'
 import { IconMicrosoft } from '@/components/icons/IconMicrosoft'
 import { PageTitle } from '@/components/layout/PageTitle'

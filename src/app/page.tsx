@@ -42,11 +42,7 @@ const profilePageSchema: WithContext<ProfilePage> = {
       },
     },
 
-    sameAs: [
-      links.social.x,
-      links.social.linkedin,
-      links.social.github,
-    ],
+    sameAs: [links.social.x, links.social.linkedin, links.social.github],
   },
 }
 

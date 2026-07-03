@@ -15,7 +15,8 @@ const experiences = [
     company: 'Bildory, Qualia, & Full-Stack AI Client',
     logo: RocketIcon,
     date: 'October 2025 - Present',
-    description: 'Architecting and developing solutions for global clients across Dubai, the UK, and India. Engineering an AI-generation PPT platform (Bildory), delivering a comprehensive full-stack AI product from scratch, and developing WhatsApp & call automation tools for enterprise clients (Qualia).',
+    description:
+      'Architecting and developing solutions for global clients across Dubai, the UK, and India. Engineering an AI-generation PPT platform (Bildory), delivering a comprehensive full-stack AI product from scratch, and developing WhatsApp & call automation tools for enterprise clients (Qualia).',
     tags: ['SaaS', 'AI', 'Full Stack', 'Dubai', 'UK', 'India'],
   },
   {
@@ -23,7 +24,8 @@ const experiences = [
     company: 'Exhibit BBC Top Gear',
     logo: '/logos/topgear.png',
     date: 'April 2025 - October 2025',
-    description: 'Architected end-to-end SaaS platform for Exhibit Social and developed comprehensive web scraping systems. Managed production server infrastructure and engineered a scalable voting system for the InfluencerX India 7th Fashion Awards.',
+    description:
+      'Architected end-to-end SaaS platform for Exhibit Social and developed comprehensive web scraping systems. Managed production server infrastructure and engineered a scalable voting system for the InfluencerX India 7th Fashion Awards.',
     tags: ['Laravel', 'React', 'Vite', 'PostgreSQL', 'GCP', 'Nginx'],
   },
   {
@@ -31,7 +33,8 @@ const experiences = [
     company: 'Pristine IT Code Pvt Ltd',
     logo: '/logos/pristine.png',
     date: 'April 2024 - April 2025',
-    description: 'Orchestrated the deployment of monolithic applications on AWS EC2 with 98.8% uptime. Engineered CI/CD pipelines using GitHub Actions and configured ELK stack for log analysis. Spearheaded cloud migration initiatives.',
+    description:
+      'Orchestrated the deployment of monolithic applications on AWS EC2 with 98.8% uptime. Engineered CI/CD pipelines using GitHub Actions and configured ELK stack for log analysis. Spearheaded cloud migration initiatives.',
     tags: ['AWS EC2', 'GitHub Actions', 'ELK Stack', 'CI/CD'],
   },
   {
@@ -39,7 +42,8 @@ const experiences = [
     company: 'Abzooba (UST)',
     logo: '/logos/abzooba.png',
     date: 'July 2023 - December 2023',
-    description: 'Architected AWS Batch data pipelines integrating MongoDB, API, Lambda, EventBridge, S3, Glue, and DynamoDB. Constructed end-to-end eCommerce data pipeline with PySpark and Kafka.',
+    description:
+      'Architected AWS Batch data pipelines integrating MongoDB, API, Lambda, EventBridge, S3, Glue, and DynamoDB. Constructed end-to-end eCommerce data pipeline with PySpark and Kafka.',
     tags: ['AWS Batch', 'PySpark', 'Kafka', 'MongoDB', 'Redshift'],
   },
   {
@@ -47,7 +51,8 @@ const experiences = [
     company: 'Electromotion',
     logo: '/logos/evidyut.png',
     date: 'May 2022 - July 2022',
-    description: 'Created Python scripts to extract IoT sensor data via Bluetooth for real-time analytics. Optimized DynamoDB expenses by 90% leveraging S3. Launched real-time analytics dashboards using Grafana and Power BI.',
+    description:
+      'Created Python scripts to extract IoT sensor data via Bluetooth for real-time analytics. Optimized DynamoDB expenses by 90% leveraging S3. Launched real-time analytics dashboards using Grafana and Power BI.',
     tags: ['Python', 'AWS IoT Core', 'Grafana', 'Power BI', 'S3'],
   },
 ] as const
@@ -65,16 +70,17 @@ export function HomeExperience() {
       <div className="flex flex-col border-t border-border">
         {experiences.map((exp) => (
           <details key={exp.title} className="group border-b border-border">
-            <summary className="flex cursor-pointer items-center justify-between py-4 font-medium transition-colors hover:text-primary outline-none marker:content-[''] [&::-webkit-details-marker]:hidden">
+            <summary className="flex cursor-pointer items-center justify-between py-4 font-medium transition-colors outline-none marker:content-[''] hover:text-primary [&::-webkit-details-marker]:hidden">
               <div className="flex items-center gap-3">
-                <div className="shrink-0 overflow-hidden rounded-sm bg-white border border-border size-8 flex items-center justify-center p-1">
+                <div className="flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-border bg-white p-1">
                   {typeof exp.logo === 'string' ? (
-                    <img 
-                      src={exp.logo} 
-                      alt={exp.company} 
-                      className="w-full h-full object-contain"
+                    <img
+                      src={exp.logo}
+                      alt={exp.company}
+                      className="h-full w-full object-contain"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(exp.company)}&background=random&color=fff&bold=true`
+                        ;(e.target as HTMLImageElement).src =
+                          `https://ui-avatars.com/api/?name=${encodeURIComponent(exp.company)}&background=random&color=fff&bold=true`
                       }}
                     />
                   ) : (
@@ -83,18 +89,20 @@ export function HomeExperience() {
                 </div>
                 <div className="flex flex-col text-left">
                   <span>{exp.title}</span>
-                  <span className="text-xs text-muted-foreground font-normal">{exp.company} • {exp.date}</span>
+                  <span className="text-xs font-normal text-muted-foreground">
+                    {exp.company} • {exp.date}
+                  </span>
                 </div>
               </div>
-              <Icon 
-                icon={ArrowDown01Icon} 
-                className="size-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" 
+              <Icon
+                icon={ArrowDown01Icon}
+                className="size-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
               />
             </summary>
 
             <div className="pb-4 pl-11 text-sm text-muted-foreground">
               <p className="leading-relaxed">{exp.description}</p>
-              <div className="flex flex-wrap gap-1.5 mt-3">
+              <div className="mt-3 flex flex-wrap gap-1.5">
                 {exp.tags.map((tag) => (
                   <Badge key={tag} variant="secondary" className="font-medium">
                     {tag}
