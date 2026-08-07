@@ -6,7 +6,6 @@ import {
   SectionHeaderTitle,
 } from '@/components/layout/SectionHeader'
 import { LogoAirblander } from '@/components/logos/LogoAirblander'
-import { LogoBlueskyMeter } from '@/components/logos/LogoBlueskyMeter'
 import { Badge } from '@/components/ui/Badge'
 import { Card, CardContent, CardHeader, CardIndicator, CardTitle } from '@/components/ui/Card'
 import { Icon } from '@/components/ui/Icon'
@@ -21,18 +20,10 @@ const projects = [
     icon: <LogoAirblander />,
     link: links.projects.airblander,
   },
-  {
-    name: 'Bluesky Meter',
-    description: 'Realtime analytics for Bluesky social network.',
-    status: 'sold',
-    icon: <LogoBlueskyMeter />,
-    link: links.projects.blueskymeter,
-  },
 ] as const
 
-const statusLabels: Record<'active' | 'sold', { label: string; variant: BadgeVariant }> = {
+const statusLabels: Record<'active', { label: string; variant: BadgeVariant }> = {
   active: { label: 'Active', variant: 'emerald' },
-  sold: { label: 'Sold', variant: 'orange' },
 } as const
 
 export function HomeProjects() {

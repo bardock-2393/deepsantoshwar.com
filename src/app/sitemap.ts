@@ -27,6 +27,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
+    {
+      url: new URL('/open-source', env.NEXT_PUBLIC_BASE_URL).toString(),
+      lastModified: today,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
     ...posts,
   ]
 }

@@ -1,9 +1,7 @@
 import { Suspense } from 'react'
-import { FavouriteIcon, GitForkIcon } from '@hugeicons/core-free-icons'
+import { FavouriteIcon } from '@hugeicons/core-free-icons'
 import { Container } from '@/components/layout/Container'
 import { Icon } from '@/components/ui/Icon'
-import { TextLink } from '@/components/ui/TextLink'
-import { links } from '@/data/links.json'
 import { cn } from '@/lib/utils'
 import { FooterYear } from './FooterYear'
 

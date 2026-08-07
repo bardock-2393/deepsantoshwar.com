@@ -1,6 +1,8 @@
 import Script from 'next/script'
 import { Container } from '@/components/layout/Container'
+import { HomeArticles } from '@/components/pages/home/HomeArticles'
 import { HomeContact } from '@/components/pages/home/HomeContact'
+import { HomeContributions } from '@/components/pages/home/HomeContributions'
 import { HomeExperience } from '@/components/pages/home/HomeExperience'
 import { HomeHero } from '@/components/pages/home/HomeHero'
 import { HomePosts } from '@/components/pages/home/HomePosts'
@@ -60,6 +62,8 @@ export default function HomePage() {
         <HomePosts />
         <HomeExperience />
         <HomeProjects />
+        <HomeContributions />
+        <HomeArticles />
         <HomeSocials />
         <HomeContact />
       </Container>

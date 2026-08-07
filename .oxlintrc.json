@@ -30,7 +30,9 @@
 
     // Non JSX-runtime rules
     "react/react-in-jsx-scope": "off",
-    "react/jsx-uses-react": "off"
+
+    // Logo tiles are small local assets, next/image buys nothing here
+    "nextjs/no-img-element": "off"
   },
 
   "settings": {

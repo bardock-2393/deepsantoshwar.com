@@ -9,7 +9,6 @@ import {
   PuzzleIcon,
   ServerStack01Icon,
 } from '@hugeicons/core-free-icons'
-import { IconFlagIndia } from '@/components/icons/IconFlagIndia'
 import { IconMicrosoft } from '@/components/icons/IconMicrosoft'
 import { PageTitle } from '@/components/layout/PageTitle'
 import { buttonVariants } from '@/components/ui/Button'
@@ -34,15 +33,7 @@ export function HomeHero(props: React.ComponentProps<'section'>) {
       </PageTitle>
 
       <div className="mb-5 space-y-3 leading-relaxed text-pretty text-foreground sm:space-y-2">
-        <p>
-          A software engineer based in India
-          <IconFlagIndia
-            className={cn(
-              'ml-2 inline-block h-2.25 w-3 shrink-0 -translate-y-0.5 rounded-xs',
-              'drop-shadow-[0_0_1px_rgba(0,0,0,0.1)]'
-            )}
-          />
-        </p>
+        <p>A software engineer building startups</p>
 
         <p>I build my own products and work as a freelance consultant.</p>
       </div>

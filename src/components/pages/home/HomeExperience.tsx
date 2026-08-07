@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowDown01Icon, RocketIcon } from '@hugeicons/core-free-icons'
+import { ArrowDown01Icon } from '@hugeicons/core-free-icons'
 import {
   SectionHeader,
   SectionHeaderText,
@@ -13,7 +13,7 @@ const experiences = [
   {
     title: 'Freelancer',
     company: 'Bildory, Qualia, & Full-Stack AI Client',
-    logo: RocketIcon,
+    logo: '/logos/freelance.svg',
     date: 'October 2025 - Present',
     description:
       'Architecting and developing solutions for global clients across Dubai, the UK, and India. Engineering an AI-generation PPT platform (Bildory), delivering a comprehensive full-stack AI product from scratch, and developing WhatsApp & call automation tools for enterprise clients (Qualia).',
@@ -73,19 +73,15 @@ export function HomeExperience() {
             <summary className="flex cursor-pointer items-center justify-between py-4 font-medium transition-colors outline-none marker:content-[''] hover:text-primary [&::-webkit-details-marker]:hidden">
               <div className="flex items-center gap-3">
                 <div className="flex size-8 shrink-0 items-center justify-center overflow-hidden rounded-sm border border-border bg-white p-1">
-                  {typeof exp.logo === 'string' ? (
-                    <img
-                      src={exp.logo}
-                      alt={exp.company}
-                      className="h-full w-full object-contain"
-                      onError={(e) => {
-                        ;(e.target as HTMLImageElement).src =
-                          `https://ui-avatars.com/api/?name=${encodeURIComponent(exp.company)}&background=random&color=fff&bold=true`
-                      }}
-                    />
-                  ) : (
-                    <Icon icon={exp.logo} className="size-full text-primary" />
-                  )}
+                  <img
+                    src={exp.logo}
+                    alt={exp.company}
+                    className="h-full w-full object-contain"
+                    onError={(e) => {
+                      ;(e.target as HTMLImageElement).src =
+                        `https://ui-avatars.com/api/?name=${encodeURIComponent(exp.company)}&background=random&color=fff&bold=true`
+                    }}
+                  />
                 </div>
                 <div className="flex flex-col text-left">
                   <span>{exp.title}</span>
