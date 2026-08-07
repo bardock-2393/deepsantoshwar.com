@@ -1,4 +1,5 @@
 import { allPosts } from 'content-collections'
+import { projects } from '@/components/projects/ProjectList'
 import { env } from '@/lib/env'
 import type { MetadataRoute } from 'next'
 
@@ -28,11 +29,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: new URL('/projects', env.NEXT_PUBLIC_BASE_URL).toString(),
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: new URL('/open-source', env.NEXT_PUBLIC_BASE_URL).toString(),
       lastModified: today,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
+    ...projects.map((project) => ({
+      url: new URL(`/projects/${project.slug}`, env.NEXT_PUBLIC_BASE_URL).toString(),
+      lastModified: today,
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
     ...posts,
   ]
 }

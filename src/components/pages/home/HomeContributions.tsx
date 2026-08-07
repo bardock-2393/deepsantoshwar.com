@@ -6,8 +6,11 @@ import {
   SectionHeaderTitle,
 } from '@/components/layout/SectionHeader'
 
+const shown = 5
+
 export async function HomeContributions() {
   const contributions = await getContributions()
+  const remaining = contributions.length - shown
 
   if (contributions.length === 0) {
     return null
@@ -22,14 +25,14 @@ export async function HomeContributions() {
         </SectionHeaderText>
       </SectionHeader>
 
-      <ContributionList contributions={contributions.slice(0, 5)} />
+      <ContributionList contributions={contributions.slice(0, shown)} />
 
-      {contributions.length > 5 && (
+      {remaining > 0 && (
         <Link
           href="/open-source"
           className="mt-4 inline-block text-sm text-muted-foreground transition-colors hover:text-primary"
         >
-          See all {contributions.length} contributions →
+          See other {remaining} {remaining === 1 ? 'contribution' : 'contributions'} →
         </Link>
       )}
     </section>

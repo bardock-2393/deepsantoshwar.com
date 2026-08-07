@@ -1,30 +1,13 @@
 import Link from 'next/link'
-import { LinkSquare02Icon } from '@hugeicons/core-free-icons'
 import {
   SectionHeader,
   SectionHeaderText,
   SectionHeaderTitle,
 } from '@/components/layout/SectionHeader'
-import { LogoAirblander } from '@/components/logos/LogoAirblander'
-import { Badge } from '@/components/ui/Badge'
-import { Card, CardContent, CardHeader, CardIndicator, CardTitle } from '@/components/ui/Card'
-import { Icon } from '@/components/ui/Icon'
-import { links } from '@/data/links.json'
-import type { BadgeVariant } from '@/components/ui/Badge'
+import { ProjectList, projects } from '@/components/projects/ProjectList'
 
-const projects = [
-  {
-    name: 'Airblander',
-    description: 'Claude Code plugin that prevents AI agents from writing outdated SDK code.',
-    status: 'active',
-    icon: <LogoAirblander />,
-    link: links.projects.airblander,
-  },
-] as const
-
-const statusLabels: Record<'active', { label: string; variant: BadgeVariant }> = {
-  active: { label: 'Active', variant: 'emerald' },
-} as const
+const shown = 2
+const remaining = projects.length - shown
 
 export function HomeProjects() {
   return (
@@ -36,42 +19,16 @@ export function HomeProjects() {
         </SectionHeaderText>
       </SectionHeader>
 
-      <div className="grid gap-4 @xl/projects:grid-cols-2">
-        {projects.map((project) => (
-          <Card key={project.name} render={<article />}>
-            <CardHeader>
-              <div className="flex items-center gap-2">
-                <div className="shrink-0 rounded-sm border border-border bg-muted/50 p-0.75 *:size-4">
-                  {project.icon}
-                </div>
+      <ProjectList projects={projects.slice(0, shown)} />
 
-                <CardTitle>
-                  <Link
-                    className="after:absolute after:inset-0"
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {project.name}
-                  </Link>
-                </CardTitle>
-
-                <Badge variant={statusLabels[project.status].variant} size="sm">
-                  {statusLabels[project.status].label}
-                </Badge>
-              </div>
-            </CardHeader>
-
-            <CardContent>
-              <p>{project.description}</p>
-            </CardContent>
-
-            <CardIndicator>
-              <Icon icon={LinkSquare02Icon} />
-            </CardIndicator>
-          </Card>
-        ))}
-      </div>
+      {remaining > 0 && (
+        <Link
+          href="/projects"
+          className="mt-4 inline-block text-sm text-muted-foreground transition-colors hover:text-primary"
+        >
+          See other {remaining} {remaining === 1 ? 'project' : 'projects'} →
+        </Link>
+      )}
     </section>
   )
 }
