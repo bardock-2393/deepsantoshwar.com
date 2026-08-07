@@ -1,7 +1,7 @@
 import posthog from 'posthog-js'
 import { env } from './src/lib/env'
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' && env.NEXT_PUBLIC_POSTHOG_KEY) {
   posthog.init(env.NEXT_PUBLIC_POSTHOG_KEY, {
     api_host: '/ph',
     ui_host: env.NEXT_PUBLIC_POSTHOG_HOST,
