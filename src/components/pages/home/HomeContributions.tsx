@@ -21,7 +21,7 @@ export async function HomeContributions() {
       <SectionHeader>
         <SectionHeaderTitle>Open source</SectionHeaderTitle>
         <SectionHeaderText>
-          Pull requests I have contributed to other people&apos;s projects:
+          Pull requests I have opened on other people&apos;s projects:
         </SectionHeaderText>
       </SectionHeader>
 

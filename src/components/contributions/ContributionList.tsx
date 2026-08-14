@@ -5,23 +5,25 @@ import { links } from '@/data/links.json'
 
 const username = links.social.github.replace('https://github.com/', '')
 
-const query = `author:${username} type:pr is:merged -user:${username}`
+const query = `author:${username} type:pr -user:${username}`
 const searchUrl = `https://api.github.com/search/issues?q=${encodeURIComponent(query)}&sort=created&order=desc&per_page=100`
 
 export type PullRequest = {
   id: number
   title: string
   html_url: string
-  closed_at: string
+  created_at: string
+  state: 'open' | 'closed'
   repository_url: string
+  pull_request?: { merged_at: string | null }
 }
 
 export async function getContributions(): Promise<PullRequest[]> {
   try {
     const response = await fetch(searchUrl, {
       headers: { Accept: 'application/vnd.github+json' },
-      // ponytail: unauthenticated search, refreshed daily. Add a token if rate limits bite.
-      next: { revalidate: 86400 },
+      // ponytail: unauthenticated search, refreshed hourly. Add a token if rate limits bite.
+      next: { revalidate: 3600 },
     })
 
     if (!response.ok) {
@@ -30,13 +32,18 @@ export async function getContributions(): Promise<PullRequest[]> {
 
     const data = (await response.json()) as { items?: PullRequest[] }
 
-    return data.items ?? []
+    // Merged or still open. Closed-without-merge is not a contribution worth showing.
+    return (data.items ?? []).filter((pr) => pr.pull_request?.merged_at || pr.state === 'open')
   } catch {
     return []
   }
 }
 
-const dateFormat = new Intl.DateTimeFormat('en-US', { month: 'short', year: 'numeric' })
+const dateFormat = new Intl.DateTimeFormat('en-US', {
+  dateStyle: 'medium',
+  timeStyle: 'short',
+  timeZone: 'UTC',
+})
 
 export function ContributionList({ contributions }: { contributions: PullRequest[] }) {
   return (
@@ -53,7 +60,7 @@ export function ContributionList({ contributions }: { contributions: PullRequest
             <span className="text-sm font-medium">{pr.title}</span>
             <span className="text-xs text-muted-foreground">
               {pr.repository_url.replace('https://api.github.com/repos/', '')} •{' '}
-              {dateFormat.format(new Date(pr.closed_at))}
+              {dateFormat.format(new Date(pr.pull_request?.merged_at ?? pr.created_at))}
             </span>
           </div>
 
