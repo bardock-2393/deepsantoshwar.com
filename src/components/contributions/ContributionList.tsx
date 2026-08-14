@@ -60,6 +60,7 @@ export function ContributionList({ contributions }: { contributions: PullRequest
             <span className="text-sm font-medium">{pr.title}</span>
             <span className="text-xs text-muted-foreground">
               {pr.repository_url.replace('https://api.github.com/repos/', '')} •{' '}
+              {pr.pull_request?.merged_at ? 'Merged' : 'Open'} •{' '}
               {dateFormat.format(new Date(pr.pull_request?.merged_at ?? pr.created_at))}
             </span>
           </div>
