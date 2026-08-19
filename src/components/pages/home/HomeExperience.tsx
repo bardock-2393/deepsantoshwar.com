@@ -11,28 +11,71 @@ import { Icon } from '@/components/ui/Icon'
 
 const experiences = [
   {
-    title: 'Freelancer',
-    company: 'Bildory, Qualia, & Full-Stack AI Client',
-    logo: '/logos/freelance.svg',
-    date: 'October 2025 - Present',
+    title: 'Software Engineer (Contract)',
+    company: 'Bildory (Stealth)',
+    logo: '/logos/bildory.png',
+    date: 'January 2026 - Present',
+    location: 'Dubai, UAE',
     description:
-      'Architecting and developing solutions for global clients across Dubai, the UK, and India. Engineering an AI-generation PPT platform (Bildory), delivering a comprehensive full-stack AI product from scratch, and developing WhatsApp & call automation tools for enterprise clients (Qualia).',
-    tags: ['SaaS', 'AI', 'Full Stack', 'Dubai', 'UK', 'India'],
+      'Building a stealth-mode AI presentation platform in the same space as Gamma. Developing Python and FastAPI services with CrewAI-based multi-agent workflows for slide generation, backed by MongoDB, with a React front end deployed on AWS.',
+    tags: ['Python', 'FastAPI', 'CrewAI', 'AI Agents', 'MongoDB', 'React', 'AWS'],
+  },
+  {
+    title: 'Software Engineer, Backend (Contract)',
+    company: 'AIApply',
+    logo: '/logos/aiapply.png',
+    date: 'December 2025 - Present',
+    location: 'United Kingdom',
+    description: (
+      <>
+        Building backend services in Python and FastAPI on GCP with PostgreSQL for{' '}
+        <a
+          href="https://aiapply.co/interview-answer-buddy"
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-600 underline-offset-4 hover:underline dark:text-blue-400"
+        >
+          Interview Buddy
+        </a>
+        . Designing and shipping AI agent systems — tool calling, retrieval, and multi-step
+        workflows — along with the APIs, data models, and async pipelines behind them.
+      </>
+    ),
+    tags: ['FastAPI', 'Python', 'PostgreSQL', 'GCP', 'AI Agents'],
+    url: 'https://aiapply.co/interview-answer-buddy',
   },
   {
     title: 'Software Developer',
     company: 'Exhibit BBC Top Gear',
     logo: '/logos/topgear.png',
     date: 'April 2025 - October 2025',
-    description:
-      'Architected end-to-end SaaS platform for Exhibit Social and developed comprehensive web scraping systems. Managed production server infrastructure and engineered a scalable voting system for the InfluencerX India 7th Fashion Awards.',
-    tags: ['Laravel', 'React', 'Vite', 'PostgreSQL', 'GCP', 'Nginx'],
+    location: 'Mumbai, India',
+    description: (
+      <>
+        Architected{' '}
+        <a
+          href="https://app.exhibit.social"
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-600 underline-offset-4 hover:underline dark:text-blue-400"
+        >
+          Exhibit Social
+        </a>
+        , an end-to-end influencer marketing platform built in PHP and Laravel on PostgreSQL and
+        GCP, with AI workflows and comprehensive web scraping systems. Managed production server
+        infrastructure and engineered a scalable voting system for the InfluencerX India 7th Fashion
+        Awards.
+      </>
+    ),
+    tags: ['PHP', 'Laravel', 'PostgreSQL', 'AI Workflows', 'GCP', 'React', 'Vite', 'Nginx'],
+    url: 'https://app.exhibit.social',
   },
   {
     title: 'Jr. DevOps Engineer',
     company: 'Pristine IT Code Pvt Ltd',
     logo: '/logos/pristine.png',
     date: 'April 2024 - April 2025',
+    location: 'Mumbai, India',
     description:
       'Orchestrated the deployment of monolithic applications on AWS EC2 with 98.8% uptime. Engineered CI/CD pipelines using GitHub Actions and configured ELK stack for log analysis. Spearheaded cloud migration initiatives.',
     tags: ['AWS EC2', 'GitHub Actions', 'ELK Stack', 'CI/CD'],
@@ -51,9 +94,24 @@ const experiences = [
     company: 'Electromotion',
     logo: '/logos/evidyut.png',
     date: 'May 2022 - July 2022',
-    description:
-      'Created Python scripts to extract IoT sensor data via Bluetooth for real-time analytics. Optimized DynamoDB expenses by 90% leveraging S3. Launched real-time analytics dashboards using Grafana and Power BI.',
-    tags: ['Python', 'AWS IoT Core', 'Grafana', 'Power BI', 'S3'],
+    description: (
+      <>
+        Built the data pipeline behind{' '}
+        <a
+          href="https://evidyut.in/products/diagnostix"
+          target="_blank"
+          rel="noreferrer"
+          className="text-blue-600 underline-offset-4 hover:underline dark:text-blue-400"
+        >
+          Diagnostix
+        </a>
+        , collecting IoT sensor data from an Android app over Bluetooth and streaming it to AWS
+        servers for real-time analytics. Optimized DynamoDB expenses by 90% leveraging S3. Launched
+        real-time analytics dashboards using Grafana and Power BI.
+      </>
+    ),
+    tags: ['Python', 'Android', 'AWS IoT Core', 'DynamoDB', 'S3', 'Grafana', 'Power BI'],
+    url: 'https://evidyut.in/products/diagnostix',
   },
 ] as const
 
@@ -86,7 +144,20 @@ export function HomeExperience() {
                 <div className="flex flex-col text-left">
                   <span>{exp.title}</span>
                   <span className="text-xs font-normal text-muted-foreground">
-                    {exp.company} • {exp.date}
+                    {'url' in exp ? (
+                      <a
+                        href={exp.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline-offset-4 hover:text-primary hover:underline"
+                      >
+                        {exp.company}
+                      </a>
+                    ) : (
+                      exp.company
+                    )}{' '}
+                    • {exp.date}
+                    {'location' in exp ? ` • ${exp.location}` : null}
                   </span>
                 </div>
               </div>

@@ -1,9 +1,4 @@
-import {
-  ArrowDown01Icon,
-  Presentation01Icon,
-  UserAiIcon,
-  WhatsappIcon,
-} from '@hugeicons/core-free-icons'
+import { ArrowDown01Icon, Presentation01Icon, UserAiIcon } from '@hugeicons/core-free-icons'
 import {
   SectionHeader,
   SectionHeaderText,
@@ -24,12 +19,7 @@ const clients = [
     description: 'Interview assistance for job seekers.',
     tags: ['Desktop', 'Mac', 'Windows', 'UK'],
     icon: UserAiIcon,
-  },
-  {
-    name: 'Qualia',
-    description: 'WhatsApp & call automation for enterprise clients (Wipro, Honda, Tata).',
-    tags: ['SaaS', 'Infra', 'Automation', 'India'],
-    icon: WhatsappIcon,
+    url: 'https://aiapply.co/interview-answer-buddy',
   },
 ] as const
 
@@ -51,7 +41,18 @@ export function HomeClients() {
                 <div className="shrink-0 rounded-sm bg-muted/50 p-1.5 text-primary">
                   <Icon icon={client.icon} className="size-4" />
                 </div>
-                <span>{client.name}</span>
+                {'url' in client ? (
+                  <a
+                    href={client.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline-offset-4 hover:text-primary hover:underline"
+                  >
+                    {client.name}
+                  </a>
+                ) : (
+                  <span>{client.name}</span>
+                )}
               </div>
               <Icon
                 icon={ArrowDown01Icon}
