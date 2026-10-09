@@ -11,16 +11,6 @@ import { Icon } from '@/components/ui/Icon'
 
 const experiences = [
   {
-    title: 'Software Engineer (Contract)',
-    company: 'Bildory (Stealth)',
-    logo: '/logos/bildory.png',
-    date: 'January 2026 - Present',
-    location: 'Dubai, UAE',
-    description:
-      'Building a stealth-mode AI presentation platform in the same space as Gamma. Developing Python and FastAPI services with CrewAI-based multi-agent workflows for slide generation, backed by MongoDB, with a React front end deployed on AWS.',
-    tags: ['Python', 'FastAPI', 'CrewAI', 'AI Agents', 'MongoDB', 'React', 'AWS'],
-  },
-  {
     title: 'Software Engineer, Backend (Contract)',
     company: 'AIApply',
     logo: '/logos/aiapply.png',
