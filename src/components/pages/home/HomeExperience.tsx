@@ -28,20 +28,23 @@ const experiences = [
     location: 'United Kingdom',
     description: (
       <>
-        Building backend services in Python and FastAPI on GCP with PostgreSQL for{' '}
+        Developed core AI features of{' '}
         <a
           href="https://aiapply.co/interview-answer-buddy"
           target="_blank"
           rel="noreferrer"
           className="text-blue-600 underline-offset-4 hover:underline dark:text-blue-400"
         >
-          Interview Buddy
+          Interview Answer Buddy
         </a>
-        . Designing and shipping AI agent systems — tool calling, retrieval, and multi-step
-        workflows — along with the APIs, data models, and async pipelines behind them.
+        , a cross-platform Electron desktop app used by 2M+ job seekers, giving candidates real-time
+        AI assistance during live interviews. Engineered a real-time pipeline streaming live speech
+        transcription (AssemblyAI) into streamed LLM answers with model routing and fallback via
+        OpenRouter, served by FastAPI on Docker and AWS, powering 10,000+ interview sessions.
+        Integrated Sentry and PostHog for production monitoring.
       </>
     ),
-    tags: ['FastAPI', 'Python', 'PostgreSQL', 'GCP', 'AI Agents'],
+    tags: ['FastAPI', 'Python', 'Electron', 'AssemblyAI', 'OpenRouter', 'Docker', 'AWS'],
     url: 'https://aiapply.co/interview-answer-buddy',
   },
   {
@@ -52,7 +55,7 @@ const experiences = [
     location: 'Mumbai, India',
     description: (
       <>
-        Architected{' '}
+        Built{' '}
         <a
           href="https://app.exhibit.social"
           target="_blank"
@@ -61,13 +64,27 @@ const experiences = [
         >
           Exhibit Social
         </a>
-        , an end-to-end influencer marketing platform built in PHP and Laravel on PostgreSQL and
-        GCP, with AI workflows and comprehensive web scraping systems. Managed production server
-        infrastructure and engineered a scalable voting system for the InfluencerX India 7th Fashion
-        Awards.
+        , an influencer campaign management SaaS managing 1M+ global influencers and 2,000+ brands,
+        using PHP Laravel, Python, PostgreSQL, React+Vite, and AWS. Created a 2-agent LangGraph
+        reporting workflow (analyst agent for campaign data, writer agent for reports) with RAG on
+        ChromaDB and LangSmith tracing, generating performance summaries and ROI analytics.
+        Delivered a high-traffic voting system for the InfluencerX Fashion Awards with Nginx load
+        balancing, and a web scraper for BBC Top Gear India.
       </>
     ),
-    tags: ['PHP', 'Laravel', 'PostgreSQL', 'AI Workflows', 'GCP', 'React', 'Vite', 'Nginx'],
+    tags: [
+      'PHP',
+      'Laravel',
+      'Python',
+      'PostgreSQL',
+      'AWS',
+      'React',
+      'Vite',
+      'LangGraph',
+      'ChromaDB',
+      'LangSmith',
+      'Nginx',
+    ],
     url: 'https://app.exhibit.social',
   },
   {
@@ -77,7 +94,7 @@ const experiences = [
     date: 'April 2024 - April 2025',
     location: 'Mumbai, India',
     description:
-      'Orchestrated the deployment of monolithic applications on AWS EC2 with 98.8% uptime. Engineered CI/CD pipelines using GitHub Actions and configured ELK stack for log analysis. Spearheaded cloud migration initiatives.',
+      'Automated CI/CD pipelines with GitHub Actions, cutting deployment time by 40%, and set up ELK dashboards that improved log analysis by 30%. Managed four production apps on AWS EC2 with uptime monitoring, and led a cloud migration that cut operational costs by 20%.',
     tags: ['AWS EC2', 'GitHub Actions', 'ELK Stack', 'CI/CD'],
   },
   {
@@ -86,8 +103,8 @@ const experiences = [
     logo: '/logos/abzooba.png',
     date: 'July 2023 - December 2023',
     description:
-      'Architected AWS Batch data pipelines integrating MongoDB, API, Lambda, EventBridge, S3, Glue, and DynamoDB. Constructed end-to-end eCommerce data pipeline with PySpark and Kafka.',
-    tags: ['AWS Batch', 'PySpark', 'Kafka', 'MongoDB', 'Redshift'],
+      'Built data pipelines on AWS (Batch, Lambda, Glue, S3, DynamoDB) and an eCommerce pipeline with Kafka and Redshift, improving MySQL integration efficiency by 30%.',
+    tags: ['AWS Batch', 'Lambda', 'Glue', 'Kafka', 'Redshift', 'MySQL'],
   },
   {
     title: 'IoT & Cloud Intern',
